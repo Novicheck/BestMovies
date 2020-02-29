@@ -21,6 +21,7 @@
 		92C6E601240A9E1100F82FED /* DetailMoviePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6E600240A9E1100F82FED /* DetailMoviePresenter.swift */; };
 		92C6E604240A9F8200F82FED /* DetailMoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6E602240A9F8200F82FED /* DetailMoviesViewController.swift */; };
 		92C6E605240A9F8200F82FED /* DetailMoviesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92C6E603240A9F8200F82FED /* DetailMoviesViewController.xib */; };
+		92C6E613240AC52200F82FED /* Posters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C6E612240AC52200F82FED /* Posters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		92C6E600240A9E1100F82FED /* DetailMoviePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoviePresenter.swift; sourceTree = "<group>"; };
 		92C6E602240A9F8200F82FED /* DetailMoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMoviesViewController.swift; sourceTree = "<group>"; };
 		92C6E603240A9F8200F82FED /* DetailMoviesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailMoviesViewController.xib; sourceTree = "<group>"; };
+		92C6E612240AC52200F82FED /* Posters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				92C6E5EC240A5CE700F82FED /* Movie.swift */,
+				92C6E612240AC52200F82FED /* Posters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92C6E613240AC52200F82FED /* Posters.swift in Sources */,
 				92C6E601240A9E1100F82FED /* DetailMoviePresenter.swift in Sources */,
 				92C6E604240A9F8200F82FED /* DetailMoviesViewController.swift in Sources */,
 				92C6E5F0240A634900F82FED /* NetworkService.swift in Sources */,

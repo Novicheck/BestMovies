@@ -28,4 +28,29 @@ struct Movie: Decodable {
     let `Type`: String?
     let Response: String?
     let Images: [String]?
+    
+    var fullDescription: String {
+        return """
+        Название: \(Title ?? "")
+        Год выхода: \(Year ?? "")
+        Рейтинг: \(Rated ?? "")
+        Дата выхода: \(Released ?? "")
+        Дата выхода: \(Released ?? "")
+        Длительность: \(Runtime ?? "")
+        Жанр: \(Genre ?? "")
+        Директор: \(Director ?? "")
+        Писатель: \(Writer ?? "")
+        Актёры: \(Actors ?? "")
+        Сюжет: \(Plot ?? "")
+        Язык: \(Language ?? "")
+        Страна: \(Country ?? "")
+        Награды: \(Awards ?? "")
+        Оценка: \(Metascore ?? "")
+        IMDB рейтинг: \(imdbRating ?? "")
+        IMDB голосов: \(imdbVotes ?? "")
+        IMDB ID: \(imdbID ?? "")
+        Вид: \(`Type` ?? "")
+        """
+    }
+
 }
