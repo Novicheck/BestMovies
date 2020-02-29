@@ -14,12 +14,13 @@ protocol MoviesViewProtocol: class {
 }
 
 protocol MoviesViewPresenterProtocol: class {
+    var movies: [Movie]? {get set}
     init (view: MoviesViewProtocol, networkService: NetworkServiceProtocol)
     func getMovies()
-    var movies:[Movie]? {get set}
 }
 
 class MoviesPresenter: MoviesViewPresenterProtocol {
+    
     weak var view: MoviesViewProtocol?
     let networkService: NetworkServiceProtocol!
     var movies: [Movie]?
@@ -40,7 +41,6 @@ class MoviesPresenter: MoviesViewPresenterProtocol {
                         self.movies = movies
                         self.view?.succes()
                     case .failure(let error):
-                        print(error.localizedDescription)
                         self.view?.failure(error: error)
                 }
             }

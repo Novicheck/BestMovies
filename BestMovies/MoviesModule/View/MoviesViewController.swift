@@ -16,6 +16,8 @@ class MoviesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.title = "Best Movies"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
     }
 }
@@ -26,9 +28,11 @@ extension MoviesViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell = UITableViewCell(style: .subtitle, reuseIdentifier: "Cell")
         let movie = presenter.movies?[indexPath.row]
         cell.textLabel?.text = movie?.Title
+        cell.detailTextLabel?.text = movie?.Released
         return cell
     }
 }

@@ -13,15 +13,17 @@ protocol DetailMoviesViewProtocol: class {
 }
 
 protocol DetailMoviesViewPresenterProtocol: class {
+    var movie:Movie? { get set }
     init (view: DetailMoviesViewProtocol, networkService: NetworkServiceProtocol,
           movie: Movie?)
-    func setMove()
+    func setMovie()
 }
 
 class DetailMoviePresenter: DetailMoviesViewPresenterProtocol {
+    
     weak var view: DetailMoviesViewProtocol?
     let networkService: NetworkServiceProtocol!
-    let movie: Movie?
+    var movie: Movie?
     
     required init(view: DetailMoviesViewProtocol,
                   networkService: NetworkServiceProtocol,
@@ -31,8 +33,7 @@ class DetailMoviePresenter: DetailMoviesViewPresenterProtocol {
         self.movie = movie
     }
     
-    func setMove() {
+    func setMovie() {
         view?.setMovie(movie: movie)
     }
-    
 }
