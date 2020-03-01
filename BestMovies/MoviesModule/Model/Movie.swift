@@ -52,5 +52,4 @@ struct Movie: Decodable {
         Вид: \(`Type` ?? "")
         """
     }
-
 }

@@ -8,8 +8,10 @@
 
 import Foundation
 
+
 protocol DetailMoviesViewProtocol: class {
     func setMovie(movie: Movie?)
+    
 }
 
 protocol DetailMoviesViewPresenterProtocol: class {
@@ -17,10 +19,11 @@ protocol DetailMoviesViewPresenterProtocol: class {
     init (view: DetailMoviesViewProtocol, networkService: NetworkServiceProtocol,
           movie: Movie?)
     func setMovie()
+    func setImage(completion: @escaping (Data) -> Void)
+    
 }
 
 class DetailMoviePresenter: DetailMoviesViewPresenterProtocol {
-    
     weak var view: DetailMoviesViewProtocol?
     let networkService: NetworkServiceProtocol!
     var movie: Movie?
@@ -36,4 +39,13 @@ class DetailMoviePresenter: DetailMoviesViewPresenterProtocol {
     func setMovie() {
         view?.setMovie(movie: movie)
     }
+    
+
+    func setImage(completion: @escaping (Data) -> Void) {
+        guard let stringURL = self.movie?.Images?.first else { return }
+        guard let imageURL = URL(string: stringURL) else { return }
+        guard let imageData = try? Data(contentsOf: imageURL) else { return }
+        completion(imageData)
+    }
 }
+
